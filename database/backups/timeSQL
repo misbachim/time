@@ -1,0 +1,26 @@
+insert into migrations
+(migration, batch)
+values
+('2018_07_10_074002_time__worksheet',	1),
+('2018_07_10_090546_time__timesheet',	1),
+('2018_07_10_093801_time__time_group',	1),
+('2018_07_10_094917_time__time_group_schedule',	1),
+('2018_07_10_095600_time__time_definition',	1),
+('2018_07_10_102516_time__leave',	1),
+('2018_07_11_021156_time___add_foreig_key_to_time_group_schedule',	1),
+('2018_07_11_024209_time__create_table_time_attribute',	1),
+('2018_07_11_025146_time__create_table_schedule_exception',	1),
+('2018_07_11_030226_time__create_table_raw_timesheet',	1),
+('2018_07_11_031134_time__create_table_failed_queue_job',	1),
+('2018_07_11_031235_time__create_table_queue_job',	1),
+('2018_07_11_032204_time__create_table_permit_request',	1),
+('2018_07_11_033108_time__create_table_over_request',	1),
+('2018_07_11_033933_time__create_table_log_schedule',	1),
+('2018_07_11_034503_time__create_table_log_schedule_pattern',	1),
+('2018_07_11_063434_time__create_table_leave_request',	1),
+('2018_07_11_064722_time__create_table_leave_request_detail',	1),
+('2018_07_11_065047_time__create_table_leave_eligibilitie',	1),
+('2018_07_11_065419_time__create_table_event',	1),
+('2018_07_11_070510_time__create_table_event_eligibilitie',	1),
+('2018_07_11_070919_time__create_table_employee_quotas',	1),
+('2018_07_11_071804_time__create_table_attendance',	1)

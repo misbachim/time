@@ -1,0 +1,7 @@
+﻿tenant_id,company_id,id,code,permit_code,name,description,created_by,created_at,updated_by,updated_at
+,,1,ONT,-,ON TIME STD,,0,2018-01-01,,
+,,2,LAT,PLAT,LATE,,0,2018-01-01,,
+,,3,EAO,PEAO,EARLY OUT,,0,2018-01-01,,
+,,4,NTI,-,NO TIME IN,,0,2018-01-01,,
+,,5,NTO,-,NO TIME OUT,,0,2018-01-01,,
+,,6,LDR,-,LESS DURATION,,0,2018-01-01,,

@@ -1,0 +1,7 @@
+﻿tenant_id,company_id,type,code,name,description,max_quota,quota_expiration,day_taken_min,day_taken_max,carry_max,carry_expiration_day,lov_lcty,lov_lcpt,created_by,created_at,updated_by,updated_at,id,is_annual_leave,is_allow_half_day,is_annual_leave_deductor,is_requestable,is_quota_based
+,,DO,DO,Day Off,off schedule,0,0,0,0,0,0,,,0,2018-01-01,,,1,0,0,0,0,0
+,,AB,ABS,Absence,Absence,0,0,0,0,0,0,,,0,2018-01-01,,,2,0,0,0,0,0
+,,PH,PH,Public Holiday,Public Holiday,0,0,0,0,0,0,,,0,2018-01-01,,,3,0,0,0,0,0
+,,AL,AL-LV,Annual Leave,Annual Leave,12,12,1,0,3,18,R,,0,2018-01-01,,,4,1,1,1,1,1
+,,UL,UP-LV,Unpaid Leave,Unpaid Leave,0,0,0,0,0,0,,,0,2018-01-01,,,5,0,0,0,0,0
+,,TL,TRV,Travel Leave,Travel Leave,0,0,0,0,0,0,,,0,2018-01-01,,,6,0,0,0,0,0

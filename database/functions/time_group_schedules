@@ -1,0 +1,12 @@
+﻿CREATE FUNCTION time_group_schedules(time_group_code text, start_date date, end_date date)
+    RETURNS TABLE(
+        d date,
+        leave_code text,
+        time_in timestamp,
+        time_out timestamp,
+        break_start timestamp,
+        break_end timestamp,
+        duration interval
+    )
+AS $$
+$$ LANGUAGE plpythonu;

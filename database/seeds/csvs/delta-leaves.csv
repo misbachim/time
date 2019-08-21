@@ -1,0 +1,35 @@
+tenant_id,company_id,type,code,name,description,max_quota,quota_expiration,day_taken_min,day_taken_max,carry_max,carry_expiration_day,lov_lcty,lov_lcpt,created_by,created_at,updated_by,updated_at,id,is_annual_leave,is_allow_half_day,is_annual_leave_deductor,is_requestable,is_quota_based
+1113223891,1113223891,DO,DO,Day Off,off schedule,0,0,0,0,0,0,,,0,2018-01-01,,,1,0,0,0,0,0
+1113223891,1113223891,AB,ABS,Absence,Absence,0,0,0,0,0,0,,,0,2018-01-01,,,2,0,0,0,0,0
+1113223891,1113223891,PH,PH,Public Holiday,Public Holiday,0,0,0,0,0,0,,,0,2018-01-01,,,3,0,0,0,0,0
+1113223891,1113223891,AL,AL-LV,Annual Leave,Annual Leave,12,12,1,0,3,18,R,,0,2018-01-01,,,4,1,1,1,1,1
+1113223891,1113223891,CL,LL6-LV,Long Leave,for employees who have worked for 6 (six) years continuously at the company,30,12,30,30,0,365,F,JD,0,2018-01-01,,,5,0,0,0,1,1
+1113223891,1113223891,CL,SICK-LV,Sick Leave,Sick Leave,0,0,1,0,0,0,,,0,2018-01-01,,,6,0,0,0,1,0
+1113223891,1113223891,ML,ML-LV,Mass Leave,"usually set ahead of major religious/public holidays. If an employee takes a day off on mass leave, the annual leave quota will be reduced.",0,0,1,0,0,0,,,0,2018-01-01,,,7,0,0,1,0,0
+1113223891,1113223891,CL,MAT-LV,Maternity,Maternity,0,0,90,90,0,0,,,0,2018-01-01,,,8,0,0,0,1,0
+1113223891,1113223891,CL,MSC-LV,Miscarriage,Miscarriage,0,0,45,45,0,0,,,0,2018-01-01,,,9,0,0,0,1,0
+1113223891,1113223891,CL,MRG-LV,Marriage of Employee,Marriage of Employee,0,0,3,3,0,0,,,0,2018-01-01,,,10,0,0,0,1,0
+1113223891,1113223891,CL,MRC-LV,Marriage of Employee's Child,Marriage of Employee's Child,0,0,2,2,0,0,,,0,2018-01-01,,,11,0,0,0,1,0
+1113223891,1113223891,CL,CCC-LV,Circumcision of Employee’s Child,Circumcision of Employee’s Child,0,0,2,2,0,0,,,0,2018-01-01,,,12,0,0,0,1,0
+1113223891,1113223891,CL,BPC-LV,Baptism of Employee’s Child,Baptism of Employee’s Child,0,0,2,2,0,0,,,0,2018-01-01,,,13,0,0,0,1,0
+1113223891,1113223891,CL,WGB-LV,Employee's wife giving birth or miscarriage,Employee's wife giving birth or miscarriage,0,0,2,2,0,0,,,0,2018-01-01,,,14,0,0,0,1,0
+1113223891,1113223891,CL,MFP-LV,Main Family Passed Away,"applies to the death of: Husband or wife, parent or parent-in-law, child or child-in-law",0,0,2,2,0,0,,,0,2018-01-01,,,15,0,0,0,1,0
+1113223891,1113223891,CL,FSH-LV,Death Of Employees Family Same House,Death Of Employees Family who lived in the Same House,0,0,1,1,0,0,,,0,2018-01-01,,,16,0,0,0,1,0
+1113223891,1113223891,CL,MENS-LV,Menstrual Leave,Menstrual Leave,0,0,2,2,0,0,,,0,2018-01-01,,,17,0,0,0,1,0
+1113223891,1000000000,DO,DO,Day Off,off schedule,0,0,0,0,0,0,,,0,2018-01-01,,,18,0,0,0,0,0
+1113223891,1000000000,AB,ABS,Absence,Absence,0,0,0,0,0,0,,,0,2018-01-01,,,19,0,0,0,0,0
+1113223891,1000000000,PH,PH,Public Holiday,Public Holiday,0,0,0,0,0,0,,,0,2018-01-01,,,20,0,0,0,0,0
+1113223891,1000000000,AL,AL-LV,Annual Leave,Annual Leave,12,12,1,0,3,18,R,,0,2018-01-01,,,21,1,1,1,1,1
+1113223891,1000000000,CL,LL6-LV,Long Leave,for employees who have worked for 6 (six) years continuously at the company,30,12,30,30,0,365,F,JD,0,2018-01-01,,,22,0,0,0,1,1
+1113223891,1000000000,CL,SICK-LV,Sick Leave,Sick Leave,0,0,1,0,0,0,,,0,2018-01-01,,,23,0,0,0,1,0
+1113223891,1000000000,ML,ML-LV,Mass Leave,"usually set ahead of major religious/public holidays. If an employee takes a day off on mass leave, the annual leave quota will be reduced.",0,0,1,0,0,0,,,0,2018-01-01,,,24,0,0,1,0,0
+1113223891,1000000000,CL,MAT-LV,Maternity,Maternity,0,0,90,90,0,0,,,0,2018-01-01,,,25,0,0,0,1,0
+1113223891,1000000000,CL,MSC-LV,Miscarriage,Miscarriage,0,0,45,45,0,0,,,0,2018-01-01,,,26,0,0,0,1,0
+1113223891,1000000000,CL,MRG-LV,Marriage of Employee,Marriage of Employee,0,0,3,3,0,0,,,0,2018-01-01,,,27,0,0,0,1,0
+1113223891,1000000000,CL,MRC-LV,Marriage of Employee's Child,Marriage of Employee's Child,0,0,2,2,0,0,,,0,2018-01-01,,,28,0,0,0,1,0
+1113223891,1000000000,CL,CCC-LV,Circumcision of Employee’s Child,Circumcision of Employee’s Child,0,0,2,2,0,0,,,0,2018-01-01,,,29,0,0,0,1,0
+1113223891,1000000000,CL,BPC-LV,Baptism of Employee’s Child,Baptism of Employee’s Child,0,0,2,2,0,0,,,0,2018-01-01,,,30,0,0,0,1,0
+1113223891,1000000000,CL,WGB-LV,Employee's wife giving birth or miscarriage,Employee's wife giving birth or miscarriage,0,0,2,2,0,0,,,0,2018-01-01,,,31,0,0,0,1,0
+1113223891,1000000000,CL,MFP-LV,Main Family Passed Away,"applies to the death of: Husband or wife, parent or parent-in-law, child or child-in-law",0,0,2,2,0,0,,,0,2018-01-01,,,32,0,0,0,1,0
+1113223891,1000000000,CL,FSH-LV,Death Of Employees Family Same House,Death Of Employees Family who lived in the Same House,0,0,1,1,0,0,,,0,2018-01-01,,,33,0,0,0,1,0
+1113223891,1000000000,CL,MENS-LV,Menstrual Leave,Menstrual Leave,0,0,2,2,0,0,,,0,2018-01-01,,,34,0,0,0,1,0

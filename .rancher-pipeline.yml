@@ -1,0 +1,90 @@
+stages:
+- name: Update & Test
+  steps:
+  - runScriptConfig:
+      image: reg-lawencon.trinix.id:30001/uat-base
+      shellScript: |-
+        # Install dependencies.
+        #apt-get update && apt-get install -y --no-install-recommends \
+        #curl git rsync libmemcached-dev libz-dev libpq-dev \
+        #libjpeg-dev libpng-dev libfreetype6-dev \
+        #libssl-dev libmcrypt-dev && \
+
+        # Install composer.
+        #curl -sS https://getcomposer.org/installer | php && \
+        #chmod +x composer.phar && mv composer.phar /usr/local/bin/composer && \
+
+        # Install php extensions.
+        #docker-php-ext-install mcrypt && \
+        #docker-php-ext-install pdo_pgsql && \
+        #docker-php-ext-install pgsql && \
+        #docker-php-ext-install bcmath && \
+        #docker-php-ext-install pcntl && \
+        #docker-php-ext-install gd && \
+        #docker-php-ext-install zip && \
+
+        # Clone linovhr3.
+
+        docker-php-ext-install gd
+
+        git clone --single-branch -b new https://${GITHUB_USER}:${GITHUB_PASS}@github.com/linovsoftware/linovhr3.git && \
+        cd linovhr3/ && \
+
+        # Copy php.ini.
+        mkdir -p /usr/local/etc/php/ && cp deployments/time/app-configs/php/php.ini /usr/local/etc/php/
+
+        # Init time submodule.
+        git config --file=.gitmodules submodule.services/time.url https://${GITHUB_USER}:${GITHUB_PASS}@github.com/linovsoftware/time.git && \
+        git submodule sync && git submodule update --init services/time && \
+
+        # Set global identity.
+        git config --global user.email "pipeline-01@no-reply.com" && \
+        git config --global user.name "Pipeline-01" && \
+
+        # Update ${CICD_GIT_BRANCH} branch and checkout our commit ID.
+        cd services/time/ && git checkout -B ${CICD_GIT_BRANCH} && \
+        git reset --hard ${CICD_GIT_COMMIT} && git pull origin ${CICD_GIT_BRANCH} && \
+
+        # Run component tests.
+        #vendor/bin/phpunit -v && \
+
+        if [ ${CICD_GIT_BRANCH} = "master" ] ; then export  ENV_TARGET='prod' ; elif [ ${CICD_GIT_BRANCH} = "staging" ] ; then export ENV_TARGET='staging' ; else  echo "no env" ; fi ;
+
+        # Prepare app for testing.
+        composer install --no-plugins --no-scripts && cp ../../deployments/time/envs/env.${ENV_TARGET} .env && \
+
+        # Prepare build directory.
+        cd ../../ && DEPLOY_ENV=${ENV_TARGET} ./run prepare-build-dir time
+    envFrom:
+    - sourceName: pipeline-secret
+      sourceKey: github-user
+      targetKey: GITHUB_USER
+    - sourceName: pipeline-secret
+      sourceKey: github-pass
+      targetKey: GITHUB_PASS
+- name: Versioned Build
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./linovhr3/.build-time/Dockerfile-php
+      buildContext: ./linovhr3/.build-time/
+      tag: time-api-php:${CICD_GIT_COMMIT}
+      pushRemote: true
+      registry: reg-lawencon.trinix.id:30001
+- name: Deploy
+  steps:
+  - runScriptConfig:
+      image: reg-lawencon.trinix.id:30001/gen-config:6
+      shellScript: "# generated yaml file\nbash /opt/gen-config.sh  master ${CICD_GIT_COMMIT}\n\n#
+        make directory for rancher-cli config\nmkdir -p /home/jenkins/.rancher/\n#
+        copy embedded config rancher\ncp /root/.rancher/cli2.json /home/jenkins/.rancher/\n#
+        rename /switch from dev to staging\nsed -i \"s/c-mq9dn:p-j2ntt/c-mq9dn:p-q8lt9/g\"
+        /home/jenkins/.rancher/cli2.json\n# deploy \nrancher kubectl create -f /opt/generated/time/time-api.yaml
+        --dry-run=true -o yaml | rancher kubectl apply -f -"
+timeout: 30
+branch:
+  include:
+  - staging
+  exclude:
+  - dev
+  - master
+  - quota_leave
